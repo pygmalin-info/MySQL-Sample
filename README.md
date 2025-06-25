@@ -30,10 +30,18 @@ docker compose exec mysql bash
 次に、コンテナ内で以下のコマンドを実行して MySQL にログインします。
 
 ```bash
-mysql -u test_user -p test_db
+mysql -u test_user -p
 ```
 
 パスワードを求められたら `test_password` を入力してください。
+
+4. 終了する場合（コンテナの停止・削除）
+
+```bash
+docker compose down
+```
+
+作業が終わりましたら、コンテナの停止・削除もお忘れなく。
 
 ## 補足
 
