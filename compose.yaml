@@ -14,7 +14,6 @@ services:
     volumes:
       - servlet-mysql-store:/var/lib/mysql
       - ./config/my.cnf:/etc/mysql/conf.d/my.cnf
-      - ./init:/docker-entrypoint-initdb.d
     ports:
       - 13306:3306
 

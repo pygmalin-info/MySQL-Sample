@@ -35,6 +35,22 @@ mysql -u test_user -p
 
 パスワードを求められたら `test_password` を入力してください。
 
+ユーザーとパスワードは`compose.yaml` に記載されている値になります。
+
+```yaml
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    platform: linux/amd64
+    environment:
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test_user # ← ユーザー
+      MYSQL_PASSWORD: test_password # ← パスワード
+      MYSQL_ROOT_PASSWORD: test_root_password
+      TZ: Asia/Tokyo
+```
+
 4. 終了する場合（コンテナの停止・削除）
 
 ```bash
@@ -45,5 +61,4 @@ docker compose down
 
 ## 補足
 
-- 初期データは `init/init.sql` で投入されます。
 - 設定は `config/my.cnf` でカスタマイズできます。
